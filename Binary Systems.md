@@ -337,5 +337,5 @@ A parity bit is an extra bit included with a message to make the total number of
 
 The parity method detects the presence of one, third or any odd combination of errors. An even combination of errors is undetectable. 
 
-https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202405260131917.png
+
 
