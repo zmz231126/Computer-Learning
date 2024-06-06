@@ -439,11 +439,11 @@ There are three basic logical operations: AND, OR and NOT.
 
 For example, in binary arithmetic we have 1 + 1 = 10, while in binary logic we have 1+1 = 1
 
-![image-20240529023937773](/Users/ken/Library/Application Support/typora-user-images/image-20240529023937773.png)
+![image-20240529023937773](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406061647641.png)
 
 Electronic digital circuits are sometime called **switching circuits** because they behave like a switch, with the active element such as a transistor either conducting(switch closed) or not conducting(switch open). Instead of changing the switch manually, electrical switching circuits use binary signals to control the conduction or nonconduction state of the active element.
 
-![image-20240529025019896](/Users/ken/Library/Application Support/typora-user-images/image-20240529025019896.png)
+![image-20240529025019896](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406061647288.png)
 
 Electronic digital circuits are also called logic circuits because, with proper input, they establish logical manipulation paths. Any desired information for computing or control can be operated upon by passing binary signals through various combination of logic circuits, each signal representing a variable and carrying one bit of information. 
 
@@ -451,7 +451,7 @@ digital circuits | switching circuits | logic circuits | gates
 
 The NOT gate sometimes called an **inverter** circuit since it inverts a binary signal
 
-![image-20240529025835749](/Users/ken/Library/Application Support/typora-user-images/image-20240529025835749.png)
+![image-20240529025835749](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406061647687.png)
 
 Integrated circuits differ from other electronic circuits composed of detachable components. IC cannot be separated or disconnected and the circuit inside the package is accessible only through the external pins.
 
