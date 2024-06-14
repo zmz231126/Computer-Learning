@@ -1,0 +1,81 @@
+## D锁存器
+
+SR锁存器，是一对交叉耦合的或非门，有两个输入S和R，两个输出Q和Q‘，
+
+![image-20240614032740649](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406141338590.png)
+
+锁存器的真值表如图所示：
+
+![image-20240614032827641](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406140329065.png)
+
+当R有效时，Q被设置为0。
+
+当S有效时，Q被设置为1 。
+
+两者同时有效时，会引起冲突，Q和Q‘不可能同时为0.
+
+SR锁存器中的SR同时有效的情况要避免，而且S和R混淆了时间和内容。将内容和时间分开考虑将使电路设计变得简单。下图解决了这个问题
+
+![image-20240614033241638](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406141338940.png)
+
+它有两个输入：
+
+D是数据输入，用来控制下一状态的值；
+
+CLK是时钟输入，用来控制状态变化的时间。
+
+当CLK等于0时，D的值变为无关项，此时，S=R= False。此时根据SR锁存器真值表得知，Q和Q'的状态不变。此时我们说D锁存器是不透明的（opaque）。它使得Q保持原来的状态。
+
+当CLK等于1时，D=0时，D‘=1. R=1，S=0。Q的值复位为0；当D=1时。S=1，R=0。Q的值置位为1.由此可见，CLK=1时，D=Q。此时我们说，D锁存器是透明的（transparent)，此时的D锁存器就是一个缓冲器。
+
+真值表如下：
+
+![image-20240614033958454](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406141338292.png)
+
+D锁存器避免了S和R同时有效的情况，而且时钟CLK可以控制何时数据通过锁存器。它的电路符合如图：
+
+![image-20240614034203690](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406141338983.png)
+
+## D触发器
+
+D触发器可以由反相时钟控制的两个背靠背的D锁存器构成。
+
+![image-20240614034842978](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406141338872.png)
+
+L1是主锁存器
+
+L2是从锁存器
+
+它们之间的结点为N1.
+
+D触发器在时钟上升沿将D复制到Q，在其他时间D触发器保持原来的状态。
+
+时钟的上升沿简称为为时钟沿(clock edge)。输入D确定新的状态。时钟沿确定状态发生改变的时间。
+
+D触发器也经常称为主从触发器（master-slave flip-flop）,边沿触发器（edge-triggered flip-flop）,
+
+正边沿触发器（positive edge-trigged flip-flop）
+
+D触发器的电路符号：
+
+![image-20240614040358877](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406140403901.png)
+
+## 寄存器
+
+一个N位寄存器由共享一个公共CLK输入的一排N个触发器组成。这样寄存器的所有位同时被更新。寄存器是大多数时序电路的关键组件。其原理图如下
+
+![image-20240614040857874](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406140408892.png)
+
+电路符号如下：
+
+![image-20240614040929165](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406141339410.png)
+
+## 带使能端的触发器(enabled flip-flop)
+
+增加了另一个称为EN或ENABLE的输入，该输入用于确定在时钟沿是否载入数据。当EN=TRUE时，带使能端的触发器与普通的D触发器一样。当EN=0时，带使能端的触发器忽略时钟，保持原来的状态不变。
+
+![image-20240614041742160](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406141339277.png)
+
+电路符号为：
+
+![image-20240614041828087](https://raw.githubusercontent.com/zmz231126/bolgpicture/main/202406140418108.png)
